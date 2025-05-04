@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Передаём переменную для корректных путей ассетов
+    env:
+      NEXT_PUBLIC_BASE_PATH: /your-repo
 
     steps:
       - name: Checkout 🛎️
@@ -30,7 +33,7 @@ jobs:
         with:
           static_site_generator: nextjs
 
-      - name: Build и экспорт статики 🏗️
+      - name: Build статического сайта 🏗️
         run: npm run build
 
       - name: Upload artifact 📡

@@ -1,4 +1,3 @@
-# .github/workflows/publish.yml
 name: publish-to-github-pages
 
 on:
@@ -31,10 +30,8 @@ jobs:
         with:
           static_site_generator: nextjs
 
-      - name: Build и Export Next.js 🏗️
-        run: |
-          npm run build
-          npm run export
+      - name: Build и экспорт статики 🏗️
+        run: npm run build
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
